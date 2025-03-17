@@ -443,6 +443,7 @@ function renderTodos(todos) {
 
 //  API CALLS
 
+// const API_URL = "http://localhost:3000/api/todos"; // my backend URL.. where my data is fetched from
 const API_BASE_URL = "https://todo-app-backend-t85n.onrender.com"; // my backend URL(render).. where my data is fetched from
 // FETCH ALL TODOS FROM B.E
 async function fetchTodos() {
@@ -527,7 +528,7 @@ async function handleTodo(event) {
         // Make a PUT request to update the todo in the database
         const response = await fetch(
           `${API_BASE_URL}/api/todos/${existingTodoId}`,
-
+          // `http://localhost:3000/api/todos/${existingTodoId}`,
           {
             method: "PUT",
             headers: {
@@ -705,7 +706,8 @@ async function getTodoById(id) {
 async function updateTodoState(id, newState) {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/api/todos/${id}/state`,
+      //`http://localhost:3000/api/todos/${id}/state`,
+      `${API_BASE_URL}/api/todo/${id}/state`,
 
       {
         method: "PATCH",

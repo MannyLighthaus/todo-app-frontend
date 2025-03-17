@@ -443,6 +443,7 @@ function renderTodos(todos) {
 
 //  API CALLS
 
+// const API_URL = "http://localhost:3000/api/todos"; // my backend URL.. where my data is fetched from
 const API_BASE_URL = "https://todo-app-backend-t85n.onrender.com"; // my backend URL(render).. where my data is fetched from
 // FETCH ALL TODOS FROM B.E
 async function fetchTodos() {

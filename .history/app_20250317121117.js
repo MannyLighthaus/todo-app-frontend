@@ -443,11 +443,12 @@ function renderTodos(todos) {
 
 //  API CALLS
 
-const API_BASE_URL = "https://todo-app-backend-t85n.onrender.com"; // my backend URL(render).. where my data is fetched from
+const API_URL = "http://localhost:3000/api/todos"; // my backend URL.. where my data is fetched from
+const API_BASE_URL = "https://todo-app-backend-t85n.onrender.com/api";
 // FETCH ALL TODOS FROM B.E
 async function fetchTodos() {
   try {
-    const response = await fetch(`${API_BASE_URL}/api/todos`); // a GET request to the B.E API to retrieve the list.
+    const response = await fetch(API_URL); // a GET request to the B.E API to retrieve the list.
 
     const todos = await response.json(); // json converts the response into an object
 
@@ -526,8 +527,7 @@ async function handleTodo(event) {
       try {
         // Make a PUT request to update the todo in the database
         const response = await fetch(
-          `${API_BASE_URL}/api/todos/${existingTodoId}`,
-
+          `http://localhost:3000/api/todos/${existingTodoId}`,
           {
             method: "PUT",
             headers: {
@@ -562,7 +562,7 @@ async function handleTodo(event) {
 
       try {
         // Send todo to backend
-        const response = await fetch(`${API_BASE_URL}/api/todos`, {
+        const response = await fetch(API_URL, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -632,7 +632,7 @@ async function deleteTodo(event) {
 
         try {
           const response = await fetch(
-            `${API_BASE_URL}/api/todos/${idToDelete}`,
+            `http://localhost:3000/api/todos/${idToDelete}`,
             {
               method: "DELETE",
             }
@@ -688,7 +688,7 @@ async function deleteTodo(event) {
 //FUNCTION TO GET A SINGLE TODO BY ID
 async function getTodoById(id) {
   try {
-    const response = await fetch(`${API_BASE_URL}/api/todo/${id}`); // Make a request to the backend
+    const response = await fetch(`http://localhost:3000/api/todo/${id}`); // Make a request to the backend
     if (!response.ok) {
       throw new Error("Failed to fetch todo");
     }
@@ -705,8 +705,7 @@ async function getTodoById(id) {
 async function updateTodoState(id, newState) {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/api/todos/${id}/state`,
-
+      `http://localhost:3000/api/todos/${id}/state`,
       {
         method: "PATCH",
         headers: {
