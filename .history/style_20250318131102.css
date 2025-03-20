@@ -1,0 +1,382 @@
+html,
+body {
+  /* overflow: hidden; */
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #f1f5f9;
+  font-family: "Inter", sans-serif;
+}
+
+header {
+  background-color: #4a3780;
+  height: 222px;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.header-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#dateDisplay {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 32px 16px 16px 16px;
+  color: #ffffff;
+  line-height: 110%;
+  margin: 0;
+  height: 18px;
+  text-align: center;
+}
+
+.header-title {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  line-height: 150%;
+  vertical-align: top;
+}
+
+main {
+  padding: 0px 16px;
+  margin: 0px auto;
+  max-width: 480px;
+}
+
+.main-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh - 258px);
+  position: relative;
+  top: 158px;
+  gap: 30px;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.incomplete-main-content {
+  background-color: #ffffff;
+  border-radius: 16px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.completed-main-content {
+  display: none;
+  overflow: hidden;
+  padding-bottom: 15%;
+}
+
+.main-content-display {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.new-task-btn {
+  /* button */
+  background-color: #4a3780;
+  border: #4a3780;
+  border-radius: 50px;
+  width: 328px;
+  height: 56px;
+
+  /* text  */
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 24px;
+  padding: 0px 10px;
+}
+
+completed-todos-section {
+  display: block;
+}
+
+.bottom-btn {
+  position: fixed; /*fixes the button's position to the viewport, so it stays in place as the user scrolls */
+  bottom: 20px; /* places the button 20px away from the bottom edge of the page*/
+  left: 50%; /*centers the button horizontally relative to the viewport*/
+  transform: translateX(
+    -50%
+  ); /* corrects the centerin offset by moving the button back by 50% of its own width*/
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  padding: 16px 16px;
+  box-sizing: border-box;
+}
+
+.hidden {
+  display: none;
+}
+
+.todo-text {
+  margin: 0;
+  font-size: 16px;
+}
+.icon-text-container {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.checkbox-delete-container {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.category-icon-container {
+  display: flex;
+  height: 48px;
+  width: 48px;
+  padding: 4px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-icon {
+  margin: 16px;
+}
+
+input[type="checkbox"] {
+  height: 22px;
+  width: 22px;
+  margin: 16px;
+  border: 2px solid red;
+  border-left-color: red;
+}
+
+.incomplete-todo-list {
+  width: 100%;
+  padding: 0;
+  list-style-type: none;
+  overflow-y: auto;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}
+
+.completed-todo-list {
+  background-color: #ffffff;
+  border-radius: 16px;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  overflow-y: auto;
+}
+
+.no-todo-icon {
+  margin-bottom: 40px;
+}
+
+.header {
+  background-color: #4a3780;
+  height: 96px;
+  width: 100vw;
+}
+
+.head-section {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  gap: 70px;
+  padding: 16px 16px;
+  box-sizing: border-box;
+}
+
+.create-section {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 120px;
+}
+
+.new-text {
+  background-color: #ffffff;
+  border: #e0e0e0;
+  border-radius: 3px;
+  width: 100%;
+  height: 55px;
+  padding: 0;
+  font-size: 16px;
+  box-sizing: border-box;
+  padding: 10px 10px;
+  font-family: "Inter", sans-serif;
+}
+.task-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.date {
+  background-color: #ffffff;
+  border: #e0e0e0;
+  border-radius: 3px;
+  width: 160px;
+  height: 55px;
+}
+.date-time-container {
+  display: flex;
+  justify-content: space-between;
+  height: 77px;
+}
+.time {
+  background-color: #ffffff;
+  border: #e0e0e0;
+  border-radius: 3px;
+  width: 160px;
+  height: 55px;
+}
+
+.note {
+  background-color: #ffffff;
+  border: #e0e0e0;
+  border-radius: 3px;
+  width: 100%;
+  height: 173px;
+  font-size: 16px;
+  box-sizing: border-box;
+  padding: 10px 10px;
+  font-family: "Inter", sans-serif;
+}
+
+.create-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  height: 100%;
+}
+
+.save-task-btn {
+  background-color: #4a3780;
+  border: #c7c7c7;
+  border-radius: 50px;
+  color: #ffffff;
+  width: 328px;
+  height: 56px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 24px;
+  padding: 0px 10px;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.back-btn-container {
+  display: flex;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  justify-content: center;
+  align-items: center;
+}
+
+#head-text {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 110%;
+  height: 18px;
+  margin: 0;
+  padding-top: 16px;
+}
+
+.strike-through {
+  text-decoration: line-through;
+  text-decoration-color: black;
+  color: grey;
+}
+
+.incomplete-empty-display {
+  /* height: initial; */
+  min-height: 150px;
+}
+
+.incomplete-display-height {
+  max-height: 300px;
+}
+
+.incomplete-max-height {
+  max-height: 40vh;
+  height: initial;
+}
+
+.category-section {
+  display: flex;
+  gap: 24px;
+}
+
+.categories-icons {
+  display: flex;
+  flex-wrap: wrap; /* Ensures icons wrap to the next line if there's not enough space */
+  justify-content: space-evenly;
+  gap: 12px;
+}
+
+.category-icon-container.active {
+  border: 2px solid black;
+}
+
+.update-task-btn {
+  display: none;
+  background-color: #4a3780;
+  border: #c7c7c7;
+  border-radius: 50px;
+  color: #ffffff;
+  width: 328px;
+  height: 56px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 24px;
+  padding: 0px 10px;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.ayo {
+  background-color: rgb(red, green, blue);
+}
